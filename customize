@@ -16,7 +16,7 @@ echo "* Activate munin plugins"
 echo "* Install imapsync"
 # https://github.com/imapsync/imapsync
 curl -LO -s https://download.qutic.com/imapsync/imapsync-imapsync-${IMAPSYNC_VERSION}.tar.gz
-tar xf imapsync-imapsync-${IMAPSYNC_VERSION}.tar.gz
+gtar xf imapsync-imapsync-${IMAPSYNC_VERSION}.tar.gz
 mv imapsync-imapsync-${IMAPSYNC_VERSION}/imapsync /opt/local/bin/imapsync
 mkdir -p /opt/local/share/doc/imapsync
 mv imapsync-imapsync-${IMAPSYNC_VERSION}/README /opt/local/share/doc/imapsync/README
