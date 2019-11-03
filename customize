@@ -21,7 +21,7 @@ mv imapsync-imapsync-${IMAPSYNC_VERSION}/imapsync /opt/local/bin/imapsync
 mkdir -p /opt/local/share/doc/imapsync
 mv imapsync-imapsync-${IMAPSYNC_VERSION}/README /opt/local/share/doc/imapsync/README
 rm imapsync-imapsync-${IMAPSYNC_VERSION}.tar.gz
-rm imapsync-imapsync-${IMAPSYNC_VERSION}
+rm -rf imapsync-imapsync-${IMAPSYNC_VERSION}
 
 # Clean up
 echo "* Cleaning up."
