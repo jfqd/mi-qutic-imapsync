@@ -1,0 +1,10 @@
+# imapsync dependencies
+p5-Data-Uniqid
+p5-Date-Manip
+p5-Digest-HMAC
+p5-IO-Socket-SSL
+p5-IO-Tee
+p5-Mail-IMAPClient
+p5-Term-ReadKey
+p5-Unicode-String
+p5-File-Copy-Recursive

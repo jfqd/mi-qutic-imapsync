@@ -1,0 +1,31 @@
+#!/usr/bin/bash
+
+PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
+
+# Exit if any command fails
+set -o errexit
+
+IMAPSYNC_VERSION="1.945"
+
+MUNIN_PLUGINS="
+"
+
+echo "* Activate munin plugins"
+/opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
+
+echo "* Install imapsync"
+# https://github.com/imapsync/imapsync
+curl -LO -s https://download.qutic.com/imapsync/imapsync-imapsync-${IMAPSYNC_VERSION}.tar.gz
+tar xf imapsync-imapsync-${IMAPSYNC_VERSION}.tar.gz
+mv imapsync-imapsync-${IMAPSYNC_VERSION}/imapsync /opt/local/bin/imapsync
+mkdir -p /opt/local/share/doc/imapsync
+mv imapsync-imapsync-${IMAPSYNC_VERSION}/README /opt/local/share/doc/imapsync/README
+rm imapsync-imapsync-${IMAPSYNC_VERSION}.tar.gz
+rm imapsync-imapsync-${IMAPSYNC_VERSION}
+
+# Clean up
+echo "* Cleaning up."
+rm /root/customize
+
+# Prepare image for provisioning
+sm-prepare-image -y
