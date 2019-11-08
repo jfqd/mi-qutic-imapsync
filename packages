@@ -8,3 +8,12 @@ p5-Mail-IMAPClient
 p5-Term-ReadKey
 p5-Unicode-String
 p5-File-Copy-Recursive
+p5-Readonly
+p5-local-lib
+p5-Log-Log4perl
+p5-Regexp-Common
+p5-File-Tail
+p5-App-cpanminus
+# p5-Sys-MemInfo
+gmake
+gcc7

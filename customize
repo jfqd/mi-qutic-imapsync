@@ -31,6 +31,9 @@ rm -rf imapsync-imapsync-${IMAPSYNC_VERSION}
 mkdir -p /var/log/imapsync
 chown imapsync:imapsync /var/log/imapsync
 
+echo "* Install missing perl modules"
+/opt/local/bin/cpanm Sys::MemInfo
+
 # Clean up
 echo "* Cleaning up."
 rm /root/customize
