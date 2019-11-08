@@ -13,6 +13,12 @@ MUNIN_PLUGINS="
 echo "* Activate munin plugins"
 /opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
 
+echo "* Setup imapsync home"
+groupadd -g 1100 imapsync
+useradd -m -s /usr/bin/bash -d /home/imapsync -u 1100 -g imapsync imapsync
+passwd -N imapsync
+passwd -d imapsync
+
 echo "* Install imapsync"
 # https://github.com/imapsync/imapsync
 curl -LO -s https://download.qutic.com/src/imapsync/imapsync-imapsync-${IMAPSYNC_VERSION}.tar.gz
@@ -22,6 +28,8 @@ mkdir -p /opt/local/share/doc/imapsync
 mv imapsync-imapsync-${IMAPSYNC_VERSION}/README /opt/local/share/doc/imapsync/README
 rm imapsync-imapsync-${IMAPSYNC_VERSION}.tar.gz
 rm -rf imapsync-imapsync-${IMAPSYNC_VERSION}
+mkdir -p /var/log/imapsync
+chown imapsync:imapsync /var/log/imapsync
 
 # Clean up
 echo "* Cleaning up."
