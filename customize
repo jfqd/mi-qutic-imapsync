@@ -14,8 +14,8 @@ echo "* Activate munin plugins"
 /opt/qutic/bin/munin-node-plugins ${MUNIN_PLUGINS}
 
 echo "* Setup imapsync home"
-groupadd -g 1100 imapsync
-useradd -m -s /usr/bin/bash -d /home/imapsync -u 1100 -g imapsync imapsync
+groupadd -g 1210 imapsync
+useradd -m -s /usr/bin/bash -d /home/imapsync -u 1210 -g imapsync imapsync
 passwd -N imapsync
 passwd -d imapsync
 
