@@ -36,6 +36,7 @@ echo "* Install missing perl modules"
 
 # Clean up
 echo "* Cleaning up."
+pkgin -y rm gmake gcc7
 rm /root/customize
 
 # Prepare image for provisioning
